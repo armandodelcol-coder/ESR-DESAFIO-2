@@ -31,7 +31,7 @@ public class HomeController {
 	//TODO Da 200 mas fica mostrando erro
 	@RequestMapping(value = "/pedidos", method = RequestMethod.GET)
 	@Transactional
-	public @ResponseBody List<Pedido> buscar() {
+	public @ResponseBody List<Pedido> listar() {
 		List<Pedido> pedidoRepositorioAll = pedidoRepositorio.findAll();
 		return pedidoRepositorioAll;
 	}
