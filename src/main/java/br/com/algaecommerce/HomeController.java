@@ -53,7 +53,6 @@ public class HomeController {
 	
 	//TODO da um erro
 	@PostMapping("/produtos/{id}")
-	@Transactional
 	public @ResponseBody Produto edita(@PathVariable Long produtoId, @RequestBody Produto pAntigo) {
 		pAntigo.setId(produtoId);
 		Produto pNoBanco = m.find(Produto.class, pAntigo.getId());
