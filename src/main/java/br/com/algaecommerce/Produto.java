@@ -1,12 +1,6 @@
 package br.com.algaecommerce;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +15,7 @@ public class Produto {
 	private String nome;
 	
 	private LocalDateTime dataCriacao;
-	
+
 	@ElementCollection(targetClass = String.class)
 	@CollectionTable(name = "produto_tag", joinColumns = @JoinColumn(name = "produto_id"))
 	@Column(name="nome")

@@ -47,7 +47,7 @@ public class HomeController {
 	//TODO Está lento em produção, local funciona.
 	@RequestMapping(value = "/produtos", method = RequestMethod.GET)
 	@Transactional
-	public @ResponseBody List<Produto> cadastrarUmProdutoNovo() {
+	public @ResponseBody List<Produto> listarProdutos() {
 		return new produtoRepository(m).findAll();
 	}
 	
@@ -74,7 +74,7 @@ public class HomeController {
 		}
 		
 		List<Produto> findAll() {
-			TypedQuery<Produto> typedQuery = manager.createQuery("select p from Produto p", Produto.class);
+			TypedQuery<Produto> typedQuery = manager.createQuery("select p from Produto p left join fetch p.tags", Produto.class);
 			List<Produto> lista = typedQuery.getResultList();
 			return new ArrayList<>(lista);
 		}
