@@ -52,14 +52,16 @@ public class HomeController {
 	}
 	
 	//TODO da um erro
-	@PostMapping("/produtos/{id}")
-	public @ResponseBody Produto edita(@PathVariable Long produtoId, @RequestBody Produto pAntigo) {
+	@PutMapping("/produtos/{produtoId}")
+	@Transactional
+	public @ResponseBody Produto editarProduto(@PathVariable Long produtoId, @RequestBody Produto pAntigo) {
 		pAntigo.setId(produtoId);
 		Produto pNoBanco = m.find(Produto.class, pAntigo.getId());
 		if (pNoBanco == null) {
 			throw new RuntimeException("Erro 404 - Produto não encontrado");
 		}
 		pNoBanco.setNome(pAntigo.getNome());
+		pNoBanco.setTags(pAntigo.getTags());
 		m.persist(pNoBanco);
 		return pAntigo;
 	}
