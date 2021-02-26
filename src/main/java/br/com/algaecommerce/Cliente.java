@@ -30,6 +30,7 @@ public class Cliente {
 	@Column(name="nome")
 	private List<Endereco> enderecos = new ArrayList<>();
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
 	
