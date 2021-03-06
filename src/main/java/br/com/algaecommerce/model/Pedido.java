@@ -1,6 +1,4 @@
-package br.com.algaecommerce;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package br.com.algaecommerce.model;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
