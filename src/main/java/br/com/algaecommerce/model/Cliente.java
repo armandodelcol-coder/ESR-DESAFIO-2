@@ -1,4 +1,4 @@
-package br.com.algaecommerce;
+package br.com.algaecommerce.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

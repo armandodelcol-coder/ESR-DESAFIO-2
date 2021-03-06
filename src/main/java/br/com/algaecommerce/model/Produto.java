@@ -1,4 +1,4 @@
-package br.com.algaecommerce;
+package br.com.algaecommerce.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

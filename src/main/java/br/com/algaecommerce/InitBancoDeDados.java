@@ -1,5 +1,8 @@
 package br.com.algaecommerce;
 
+import br.com.algaecommerce.model.Cliente;
+import br.com.algaecommerce.model.Pedido;
+import br.com.algaecommerce.model.Produto;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
